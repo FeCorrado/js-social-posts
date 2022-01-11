@@ -54,7 +54,7 @@ for (let i = 0; i < bacheca.length; i++) {
     let profilePic2;
     
     if (sPost.profilePic == '') {
-        profilePic2 = 'https://media.istockphoto.com/photos/mind-blown-emoji-exploding-head-emoticon-on-white-background-3d-picture-id1319947943'
+        profilePic2 = 'img/foto1'
     } else {
         profilePic2 = sPost.profilePic
     }
