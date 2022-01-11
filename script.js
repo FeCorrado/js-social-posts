@@ -110,6 +110,9 @@ for (let i = 0; i < bottoneLikes.length; i++) {
 
 
 /*
+
+------ CREDO QUESTA SIA LA STRADA GIUSTA--------
+
 for (let i = 0; i < bottoneLikes.length; i++) {
     bottoneLikes[i].addEventListener("click", function () {
         if (bottoneLikes[i].classList.contains('like-button--liked'){
@@ -123,7 +126,7 @@ for (let i = 0; i < bottoneLikes.length; i++) {
 
 
 
-
+----- PROVA 1 / DILUSIONE-------
 
 for (let i = 0; i < bottoneLikes.length; i++) {
     if (bottoneLikes[i].classList.contains('like-button--liked') = true{
