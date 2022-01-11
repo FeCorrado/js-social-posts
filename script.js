@@ -35,6 +35,15 @@ const bacheca = [
         postPic: '',
         nLikes: 1
     },
+    {
+        id: 5,
+        nome: 'Artur Collins',
+        profilePic: '' ,
+        data: '21-09-2021',
+        text: 'Che bello  :)',
+        postPic: 'https://unsplash.it/600/300?image=174',
+        nLikes: 180
+    },
 ]
 
 
@@ -42,13 +51,20 @@ let outputHtml = document.querySelector(".posts-list")
 
 for (let i = 0; i < bacheca.length; i++) {
     const sPost = bacheca[i]
+    let profilePic2;
+    
+    if (sPost.profilePic == '') {
+        profilePic2 = 'https://media.istockphoto.com/photos/mind-blown-emoji-exploding-head-emoticon-on-white-background-3d-picture-id1319947943'
+    } else {
+        profilePic2 = sPost.profilePic
+    }
 
     let singlePost = `
     <div class="post">
         <div class="post__header">
             <div class="post-meta">                    
                 <div class="post-meta__icon">
-                    <img class="profile-pic" src="${sPost.profilePic}" alt="Phil Mangione">                    
+                    <img class="profile-pic" src="${profilePic2}" alt="Phil Mangione">                    
                 </div>
                 <div class="post-meta__data">
                     <div class="post-meta__author">${sPost.nome}</div>
