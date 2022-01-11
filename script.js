@@ -1,65 +1,65 @@
 const bacheca = [
-    {
-        id: 1,
-        nome: 'Phil Mangione',
-        profilePic: 'https://unsplash.it/300/300?image=15' ,
-        data: '11-11-2021',
-        text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
-        postPic: 'https://unsplash.it/600/300?image=171',
-        nLikes: 80
-    },
-    {
-        id: 2,
-        nome: 'John Mangione',
-        profilePic: 'https://unsplash.it/300/300?image=16' ,
-        data: '01-11-2022',
-        text: 'Ad Elsinore, in Danimarca, il fantasma del defunto re appare ad Amleto, suo figlio, e gli chiede di essere vendicato: ad ucciderlo è stato infatti il fratello Claudio che si è ora appropriato del trono e ha sposato la vedova moglie del re, Gertrude.',
-        postPic: 'https://unsplash.it/600/300?image=172',
-        nLikes: 15
-    },
-    {
-        id: 3,
-        nome: 'Phil Collins',
-        profilePic: 'https://unsplash.it/300/300?image=17' ,
-        data: '21-09-2021',
-        text: 'C’erano una volta due fratelli, Enrico che era ricco ma antipatico, e Nicola che era simpatico, ma senza nemmeno un soldo bucato.Una sera Nicola, aprendo la dispensa della cucina e vedendola ancora vuota, decise di andare dal fratello per chiedergli qualcosa da mangiare.',
-        postPic: 'https://unsplash.it/600/300?image=173',
-        nLikes: 180
-    },
-    {
-        id: 4,
-        nome: 'John Frusciante',
-        profilePic: 'https://unsplash.it/300/300?image=18' ,
-        data: '23-06-2021',
-        text: 'Caso vuole che proprio nei paraggi c’era un vecchietto con la barba lunga e bianca, che mentre si stava riposando dallo spaccar la legna, aveva ascoltato le parole di Nicola.',
-        postPic: '',
-        nLikes: 1
-    },
-    {
-        id: 5,
-        nome: 'Artur Collins',
-        profilePic: '' ,
-        data: '21-09-2021',
-        text: 'Che bello  :)',
-        postPic: 'https://unsplash.it/600/300?image=174',
-        nLikes: 180
-    },
-]
+  {
+    id: 1,
+    nome: "Phil Mangione",
+    profilePic: "https://unsplash.it/300/300?image=15",
+    data: "11-11-2021",
+    text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+    postPic: "https://unsplash.it/600/300?image=171",
+    nLikes: 80,
+  },
+  {
+    id: 2,
+    nome: "John Mangione",
+    profilePic: "https://unsplash.it/300/300?image=16",
+    data: "01-11-2022",
+    text: "Ad Elsinore, in Danimarca, il fantasma del defunto re appare ad Amleto, suo figlio, e gli chiede di essere vendicato: ad ucciderlo è stato infatti il fratello Claudio che si è ora appropriato del trono e ha sposato la vedova moglie del re, Gertrude.",
+    postPic: "https://unsplash.it/600/300?image=172",
+    nLikes: 15,
+  },
+  {
+    id: 3,
+    nome: "Phil Collins",
+    profilePic: "https://unsplash.it/300/300?image=17",
+    data: "21-09-2021",
+    text: "C’erano una volta due fratelli, Enrico che era ricco ma antipatico, e Nicola che era simpatico, ma senza nemmeno un soldo bucato.Una sera Nicola, aprendo la dispensa della cucina e vedendola ancora vuota, decise di andare dal fratello per chiedergli qualcosa da mangiare.",
+    postPic: "https://unsplash.it/600/300?image=173",
+    nLikes: 180,
+  },
+  {
+    id: 4,
+    nome: "John Frusciante",
+    profilePic: "https://unsplash.it/300/300?image=18",
+    data: "23-06-2021",
+    text: "Caso vuole che proprio nei paraggi c’era un vecchietto con la barba lunga e bianca, che mentre si stava riposando dallo spaccar la legna, aveva ascoltato le parole di Nicola.",
+    postPic: "",
+    nLikes: 1,
+  },
+  {
+    id: 5,
+    nome: "Artur Collins",
+    profilePic: "",
+    data: "21-09-2021",
+    text: "Che bello  :)",
+    postPic: "https://unsplash.it/600/300?image=174",
+    nLikes: 180,
+  },
+];
 
-
-let outputHtml = document.querySelector(".posts-list")
+let outputHtml = document.querySelector(".posts-list");
 
 for (let i = 0; i < bacheca.length; i++) {
-    const sPost = bacheca[i]
-    let profilePic2;
-    
-    if (sPost.profilePic == '') {
-        profilePic2 = 'img/foto1'
-    } else {
-        profilePic2 = sPost.profilePic
-    }
+  const sPost = bacheca[i];
+  let profilePic2;
+  let like = sPost.nLikes;
 
-    let singlePost = `
+  if (sPost.profilePic == "") {
+    profilePic2 = "img/foto1.jpg";
+  } else {
+    profilePic2 = sPost.profilePic;
+  }
+
+  let singlePost = `
     <div class="post">
         <div class="post__header">
             <div class="post-meta">                    
@@ -85,14 +85,22 @@ for (let i = 0; i < bacheca.length; i++) {
                     </a>
                 </div>
                 <div class="likes__counter">
-                    Piace a <b id="like-counter-1" class="js-likes-counter">${sPost.nLikes}</b> persone
+                    Piace a <b id="like-counter-1" class="js-likes-counter">${like}</b> persone
                 </div>
             </div> 
         </div>            
-    </div>`
-    
-    outputHtml.innerHTML += singlePost
+    </div>`;
+
+  outputHtml.innerHTML += singlePost;
 }
 
+let bottoneLikes = document.querySelectorAll(".js-like-button");
+let nLike = document.querySelectorAll(".js-likes-counter")
 
-
+for (let i = 0; i < bottoneLikes.length; i++) {
+    bottoneLikes[i].addEventListener("click", function () {
+    bottoneLikes[i].classList.add("like-button--liked");
+    bacheca[i].nLikes++
+    nLike[i].innerHTML = bacheca[i].nLikes
+  });
+}
