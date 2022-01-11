@@ -97,6 +97,8 @@ for (let i = 0; i < bacheca.length; i++) {
 let bottoneLikes = document.querySelectorAll(".js-like-button");
 let nLike = document.querySelectorAll(".js-likes-counter")
 
+
+
 for (let i = 0; i < bottoneLikes.length; i++) {
     bottoneLikes[i].addEventListener("click", function () {
     bottoneLikes[i].classList.add("like-button--liked");
@@ -104,3 +106,35 @@ for (let i = 0; i < bottoneLikes.length; i++) {
     nLike[i].innerHTML = bacheca[i].nLikes
   });
 }
+
+
+
+/*
+for (let i = 0; i < bottoneLikes.length; i++) {
+    bottoneLikes[i].addEventListener("click", function () {
+        if (bottoneLikes[i].classList.contains('like-button--liked'){
+            bottoneLikes[i].classList.remove("like-button--liked")
+        }else{
+            bottoneLikes[i].classList.add("like-button--liked");
+        }
+  });
+}
+
+
+
+
+
+
+for (let i = 0; i < bottoneLikes.length; i++) {
+    if (bottoneLikes[i].classList.contains('like-button--liked') = true{
+        bottoneLikes[i].classList.remove("like-button--liked")
+    }else{
+        bottoneLikes[i].classList.add("like-button--liked");
+    }
+    bottoneLikes[i].addEventListener("click", function () {
+    bottoneLikes[i].classList.add("like-button--liked");
+    bacheca[i].nLikes++
+    nLike[i].innerHTML = bacheca[i].nLikes
+  });
+}
+*/
